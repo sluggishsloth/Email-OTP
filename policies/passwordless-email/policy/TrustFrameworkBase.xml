@@ -4,9 +4,9 @@
   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
   xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06"
   PolicySchemaVersion="0.3.0.0"
-  TenantId="yourtenant.onmicrosoft.com"
+  TenantId="thehailife.onmicrosoft.com"
   PolicyId="B2C_1A_TrustFrameworkBase"
-  PublicPolicyUri="http://yourtenant.onmicrosoft.com/B2C_1A_TrustFrameworkBase">
+  PublicPolicyUri="http://thehailife.onmicrosoft.com/B2C_1A_TrustFrameworkBase">
 
   <BuildingBlocks>
     <ClaimsSchema>
@@ -535,7 +535,7 @@
           <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.AzureActiveDirectoryProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
 
           <CryptographicKeys>
-            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_TokenSigningKeyContainer" />
+            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_OTPSigning" />
           </CryptographicKeys>
 
           <!-- We need this here to suppress the SelfAsserted provider from invoking SSO on validation profiles. -->
@@ -745,7 +745,7 @@
             <Item Key="ContentDefinitionReferenceId">api.selfasserted</Item>
           </Metadata>
           <CryptographicKeys>
-            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_TokenSigningKeyContainer" />
+            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_OTPSigning" />
           </CryptographicKeys>
           <InputClaims>
             <!-- These claims ensure that any values retrieved in the previous steps (e.g. from an external IDP) are prefilled. 
@@ -825,7 +825,7 @@
             <Item Key="language.button_continue">Create</Item>
           </Metadata>
           <CryptographicKeys>
-            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_TokenSigningKeyContainer" />
+            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_OTPSigning" />
           </CryptographicKeys>
           <InputClaims>
             <InputClaim ClaimTypeReferenceId="email" />
@@ -885,7 +885,7 @@
             <Item Key="ContentDefinitionReferenceId">api.localaccountpasswordreset</Item>
           </Metadata>
           <CryptographicKeys>
-            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_TokenSigningKeyContainer" />
+            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_OTPSigning" />
           </CryptographicKeys>
           <IncludeInSso>false</IncludeInSso>
           <OutputClaims>
@@ -907,7 +907,7 @@
             <Item Key="ContentDefinitionReferenceId">api.localaccountpasswordreset</Item>
           </Metadata>
           <CryptographicKeys>
-            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_TokenSigningKeyContainer" />
+            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_OTPSigning" />
           </CryptographicKeys>
           <InputClaims>
             <InputClaim ClaimTypeReferenceId="objectId" />
@@ -994,8 +994,8 @@
             <Item Key="SendTokenResponseBodyWithJsonNumbers">true</Item>
           </Metadata>
           <CryptographicKeys>
-            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_TokenSigningKeyContainer" />
-            <Key Id="issuer_refresh_token_key" StorageReferenceId="B2C_1A_TokenEncryptionKeyContainer" />
+            <Key Id="issuer_secret" StorageReferenceId="B2C_1A_OTPSigning" />
+            <Key Id="issuer_refresh_token_key" StorageReferenceId="B2C_1A_OTPEncryption" />
           </CryptographicKeys>
           <InputClaims />
           <OutputClaims />

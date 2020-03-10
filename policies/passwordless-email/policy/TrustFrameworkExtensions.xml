@@ -6,11 +6,11 @@
   PolicySchemaVersion="0.3.0.0" 
   TenantId="thehailife.onmicrosoft.com" 
   PolicyId="B2C_1A_TrustFrameworkExtensions" 
-  PublicPolicyUri="http://yourtenant.onmicrosoft.com/B2C_1A_TrustFrameworkExtensions">
+  PublicPolicyUri="http://thehailife.onmicrosoft.com/B2C_1A_TrustFrameworkExtensions">
   
    
   <BasePolicy>
-    <TenantId>yourtenant.onmicrosoft.com</TenantId>
+    <TenantId>thehailife.onmicrosoft.com</TenantId>
     <PolicyId>B2C_1A_TrustFrameworkBase</PolicyId>
   </BasePolicy>
  <BuildingBlocks>
@@ -39,8 +39,8 @@
         <TechnicalProfile Id="login-NonInteractive">
           <InputClaims>
             <!--Sample action required: Change to your ProxyIdentityExperienceFramework App Id-->
-            <InputClaim ClaimTypeReferenceId="client_id" DefaultValue="00000000-0000-0000-0000-000000000000" />
-            <InputClaim ClaimTypeReferenceId="resource_id" PartnerClaimType="resource" DefaultValue="00000000-0000-0000-0000-000000000000" />
+            <InputClaim ClaimTypeReferenceId="client_id" DefaultValue="0648d6cd-9635-4d46-93c7-012aa9a289ac" />
+            <InputClaim ClaimTypeReferenceId="resource_id" PartnerClaimType="resource" DefaultValue="37a485a3-abc5-4e9d-849a-ea500b0f9cee" />
           </InputClaims>
         </TechnicalProfile>
       </TechnicalProfiles>

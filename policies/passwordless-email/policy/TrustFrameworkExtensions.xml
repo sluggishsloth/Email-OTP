@@ -72,7 +72,7 @@
             <!--ClaimsProviderSelection TargetClaimsExchangeId="FacebookExchange" /-->
             
             <!--Sample: Adding the sign-in with email button-->
-            <ClaimsProviderSelection TargetClaimsExchangeId="SignIn-WithEmail" />
+            <!--ClaimsProviderSelection TargetClaimsExchangeId="SignIn-WithEmail" /-->
             <ClaimsProviderSelection ValidationClaimsExchangeId="LocalAccountSigninEmailExchange" />
           </ClaimsProviderSelections>
           <ClaimsExchanges>
@@ -81,7 +81,7 @@
         </OrchestrationStep>
 
         <!-- Check if the user has selected to sign in using one of the social providers -->
-        <OrchestrationStep Order="2" Type="ClaimsExchange">
+        <!--OrchestrationStep Order="2" Type="ClaimsExchange">
           <Preconditions>
             <Precondition Type="ClaimsExist" ExecuteActionsIf="true">
               <Value>objectId</Value>
@@ -89,16 +89,16 @@
             </Precondition>
           </Preconditions>
           <ClaimsExchanges>
-            <ClaimsExchange Id="FacebookExchange" TechnicalProfileReferenceId="Facebook-OAUTH" />
+            <ClaimsExchange Id="FacebookExchange" TechnicalProfileReferenceId="Facebook-OAUTH" /-->
             
             <!--Sample: the sign-in with email claims exchange--> 
-            <ClaimsExchange Id="SignIn-WithEmail" TechnicalProfileReferenceId="LocalAccountDiscoveryUsingEmailAddress-SignIn" />
+            <!--ClaimsExchange Id="SignIn-WithEmail" TechnicalProfileReferenceId="LocalAccountDiscoveryUsingEmailAddress-SignIn" />
             <ClaimsExchange Id="SignUpWithLogonEmailExchange" TechnicalProfileReferenceId="LocalAccountSignUpWithLogonEmail" />
           </ClaimsExchanges>
-        </OrchestrationStep>
+        </OrchestrationStep-->
 
         <!-- For social IDP authentication, attempt to find the user account in the directory. -->
-        <OrchestrationStep Order="3" Type="ClaimsExchange">
+        <!--OrchestrationStep Order="3" Type="ClaimsExchange">
           <Preconditions>
             <Precondition Type="ClaimEquals" ExecuteActionsIf="true">
               <Value>authenticationSource</Value>
@@ -109,12 +109,12 @@
           <ClaimsExchanges>
             <ClaimsExchange Id="AADUserReadUsingAlternativeSecurityId" TechnicalProfileReferenceId="AAD-UserReadUsingAlternativeSecurityId-NoError" />
           </ClaimsExchanges>
-        </OrchestrationStep>
+        </OrchestrationStep-->
 
         <!-- Show self-asserted page only if the directory does not have the user account already (i.e. we do not have an objectId). 
           This can only happen when authentication happened using a social IDP. If local account was created or authentication done
           using ESTS in step 2, then an user account must exist in the directory by this time. -->
-        <OrchestrationStep Order="4" Type="ClaimsExchange">
+        <OrchestrationStep Order="2" Type="ClaimsExchange">
           <Preconditions>
             <Precondition Type="ClaimsExist" ExecuteActionsIf="true">
               <Value>objectId</Value>
@@ -122,7 +122,7 @@
             </Precondition>
           </Preconditions>
           <ClaimsExchanges>
-            <ClaimsExchange Id="SelfAsserted-Social" TechnicalProfileReferenceId="SelfAsserted-Social" />
+            <ClaimsExchange Id="LocalAccountSigninEmailExchange" TechnicalProfileReferenceId="SelfAsserted-LocalAccountSignin-Email" />
           </ClaimsExchanges>
         </OrchestrationStep>
 

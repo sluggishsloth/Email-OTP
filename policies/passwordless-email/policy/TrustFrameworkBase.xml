@@ -321,7 +321,6 @@
           <InputParameter Id="valueToCompareTo" DataType="boolean" Value="true" />
         </InputParameters>
       </ClaimsTransformation>
-    </ClaimsTransformations>
       
       <ClaimsTransformation Id="CreateRandomUPNUserName" TransformationMethod="CreateRandomString">
         <InputParameters>
@@ -344,7 +343,7 @@
         </OutputClaims>
       </ClaimsTransformation>
 
-  <ClaimsTransformation Id="CreateAlternativeSecurityId" TransformationMethod="CreateAlternativeSecurityId">
+      <ClaimsTransformation Id="CreateAlternativeSecurityId" TransformationMethod="CreateAlternativeSecurityId">
         <InputClaims>
           <InputClaim ClaimTypeReferenceId="socialIdpUserId" TransformationClaimType="key" />
           <InputClaim ClaimTypeReferenceId="identityProvider" TransformationClaimType="identityProvider" />
@@ -361,9 +360,9 @@
         <OutputClaims>
           <OutputClaim ClaimTypeReferenceId="sub" TransformationClaimType="createdClaim" />
         </OutputClaims>
-    </ClaimsTransformation>
+     </ClaimsTransformation>
  
-    </ClaimsTransformations>
+   </ClaimsTransformations>
 
     <ClientDefinitions>
       <ClientDefinition Id="DefaultWeb">
@@ -457,26 +456,26 @@
     -->
   <ClaimsProviders>
 
-        <ClaimsProvider>
+      <!--ClaimsProvider-->
       <!-- The following Domain element allows this profile to be used if the request comes with domain_hint 
            query string parameter, e.g. domain_hint=facebook.com  -->
-      <Domain>facebook.com</Domain>
+      <!--Domain>facebook.com</Domain>
       <DisplayName>Facebook</DisplayName>
       <TechnicalProfiles>
-        <TechnicalProfile Id="Facebook-OAUTH">
+        <TechnicalProfile Id="Facebook-OAUTH">-->
           <!-- The text in the following DisplayName element is shown to the user on the claims provider 
                selection screen. -->
-          <DisplayName>Facebook</DisplayName>
+          <!--DisplayName>Facebook</DisplayName>
           <Protocol Name="OAuth2" />
           <Metadata>
             <Item Key="ProviderName">facebook</Item>
             <Item Key="authorization_endpoint">https://www.facebook.com/dialog/oauth</Item>
             <Item Key="AccessTokenEndpoint">https://graph.facebook.com/oauth/access_token</Item>
             <Item Key="HttpBinding">GET</Item>
-            <Item Key="UsePolicyInRedirectUri">0</Item>
+            <Item Key="UsePolicyInRedirectUri">0</Item>-->
 
             <!-- The Facebook required HTTP GET method, but the access token response is in JSON format from 3/27/2017 -->
-            <Item Key="AccessTokenResponseFormat">json</Item>
+            <!--Item Key="AccessTokenResponseFormat">json</Item>
           </Metadata>
           <CryptographicKeys>
             <Key Id="client_secret" StorageReferenceId="B2C_1A_FacebookSecret" />
@@ -499,7 +498,7 @@
           <UseTechnicalProfileForSessionManagement ReferenceId="SM-SocialLogin" />
         </TechnicalProfile>
       </TechnicalProfiles>
-    </ClaimsProvider>
+    </ClaimsProvider-->
  
     <ClaimsProvider>
       <DisplayName>Local Account SignIn</DisplayName>

@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\policies",
+    "\\policies\\passwordless-email",
+    "\\policies\\passwordless-email\\policy"
+  ],
+  "SelectedNode": "\\policies\\passwordless-email\\policy\\PasswordReset.xml",
+  "PreviewInSolutionExplorer": false
+}

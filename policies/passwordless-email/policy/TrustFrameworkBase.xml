@@ -73,6 +73,13 @@
         <UserInputType>TextBox</UserInputType>
       </ClaimType>
 
+      <ClaimType Id="accountEnabled">
+        <DisplayName>Account Enabled</DisplayName>
+        <DataType>boolean</DataType>
+        <AdminHelpText>Specifies whether the user's account is enabled.</AdminHelpText>
+        <UserHelpText>Specifies whether your account is enabled.</UserHelpText>
+      </ClaimType>
+        
       <ClaimType Id="password">
         <DisplayName>Password</DisplayName>
         <DataType>string</DataType>
@@ -306,6 +313,16 @@
         </OutputClaims>
       </ClaimsTransformation>
 
+      <ClaimsTransformation Id="AssertAccountEnabledIsTrue" TransformationMethod="AssertBooleanClaimIsEqualToValue">
+        <InputClaims>
+          <InputClaim ClaimTypeReferenceId="accountEnabled" TransformationClaimType="inputClaim" />
+        </InputClaims>
+        <InputParameters>
+          <InputParameter Id="valueToCompareTo" DataType="boolean" Value="true" />
+        </InputParameters>
+      </ClaimsTransformation>
+    </ClaimsTransformations>
+      
       <ClaimsTransformation Id="CreateRandomUPNUserName" TransformationMethod="CreateRandomString">
         <InputParameters>
           <InputParameter Id="randomGeneratorType" DataType="string" Value="GUID" />

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <TrustFrameworkPolicy
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -1022,7 +1022,7 @@
   </ClaimsProviders>
 
   <UserJourneys>
-
+<!-- maybe move the SUSI user journey from Extensions to here-->
     <UserJourney Id="ProfileEdit">
       <OrchestrationSteps>
       

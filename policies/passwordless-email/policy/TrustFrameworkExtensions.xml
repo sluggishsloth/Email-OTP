@@ -69,7 +69,7 @@
       
         <OrchestrationStep Order="1" Type="CombinedSignInAndSignUp" ContentDefinitionReferenceId="api.signuporsignin">
           <ClaimsProviderSelections>
-            <ClaimsProviderSelection TargetClaimsExchangeId="FacebookExchange" />
+            <!--ClaimsProviderSelection TargetClaimsExchangeId="FacebookExchange" /-->
             
             <!--Sample: Adding the sign-in with email button-->
             <ClaimsProviderSelection TargetClaimsExchangeId="SignIn-WithEmail" />

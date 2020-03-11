@@ -152,7 +152,7 @@
         </DefaultPartnerClaimTypes>
         <UserHelpText/>
       </ClaimType>
-
+<!--the below 2 might need to be commented-->
       <ClaimType Id="alternativeSecurityId">
         <DisplayName>AlternativeSecurityId</DisplayName>
         <DataType>string</DataType>
@@ -321,7 +321,7 @@
           <InputParameter Id="valueToCompareTo" DataType="boolean" Value="true" />
         </InputParameters>
       </ClaimsTransformation>
-      
+<!--the below 4 might need to be commented-->      
       <ClaimsTransformation Id="CreateRandomUPNUserName" TransformationMethod="CreateRandomString">
         <InputParameters>
           <InputParameter Id="randomGeneratorType" DataType="string" Value="GUID" />

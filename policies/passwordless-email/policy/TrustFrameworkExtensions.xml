@@ -63,6 +63,7 @@
   </ClaimsProviders>
 
     <UserJourneys>
+    <!--Might need to move this entire thing to Base-->
 	<UserJourney Id="SignUpOrSignIn">
       <OrchestrationSteps>
       

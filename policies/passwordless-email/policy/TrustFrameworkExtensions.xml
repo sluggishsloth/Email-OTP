@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <TrustFrameworkPolicy 
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
   xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
@@ -19,7 +19,7 @@
 
   <ClaimsProviders>
 
-    <ClaimsProvider>
+    <!--ClaimsProvider>
       <DisplayName>Facebook</DisplayName>
       <TechnicalProfiles>
         <TechnicalProfile Id="Facebook-OAUTH">
@@ -30,7 +30,7 @@
           </Metadata>
         </TechnicalProfile>
       </TechnicalProfiles>
-    </ClaimsProvider>
+    </ClaimsProvider-->
 
 
     <ClaimsProvider>
@@ -47,19 +47,19 @@
     </ClaimsProvider>
 
 
-    <ClaimsProvider>
+    <!--ClaimsProvider>
       <DisplayName>Local Account</DisplayName>
-      <TechnicalProfiles>
+      <TechnicalProfiles-->
         <!--Sample: Create new technical profile based on the password reset technical profile that
             asks the user to provide and verify the email address, and returns the user object id.
             If the account doesn't exist, the technical profile return following error message "An account could not be found for the provided user ID."
             The new technical profile sets the display name to "Sign-In with Email" that is shown on the sign-up or sign-in page-->
-        <TechnicalProfile Id="LocalAccountDiscoveryUsingEmailAddress-SignIn">
+        <!--TechnicalProfile Id="LocalAccountDiscoveryUsingEmailAddress-SignIn">
           <DisplayName>Sign-In with Email</DisplayName>
           <IncludeTechnicalProfile ReferenceId="LocalAccountDiscoveryUsingEmailAddress" />
         </TechnicalProfile>
       </TechnicalProfiles>
-    </ClaimsProvider>
+    </ClaimsProvider-->
   </ClaimsProviders>
 
     <UserJourneys>

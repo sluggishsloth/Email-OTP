@@ -561,7 +561,7 @@
 
         <!-- Technical profiles for social logins -->
 
-        <TechnicalProfile Id="AAD-UserWriteUsingAlternativeSecurityId">
+        <!--TechnicalProfile Id="AAD-UserWriteUsingAlternativeSecurityId">
           <Metadata>
             <Item Key="Operation">Write</Item>
             <Item Key="RaiseErrorIfClaimsPrincipalAlreadyExists">true</Item>
@@ -573,25 +573,25 @@
           </InputClaimsTransformations>
           <InputClaims>
             <InputClaim ClaimTypeReferenceId="AlternativeSecurityId" PartnerClaimType="alternativeSecurityId" Required="true" />
-          </InputClaims>
-          <PersistedClaims>
+          </InputClaims-->
+          <!--PersistedClaims-->
             <!-- Required claims -->
-            <PersistedClaim ClaimTypeReferenceId="alternativeSecurityId" />
+            <!--PersistedClaim ClaimTypeReferenceId="alternativeSecurityId" />
             <PersistedClaim ClaimTypeReferenceId="userPrincipalName" />
             <PersistedClaim ClaimTypeReferenceId="mailNickName" DefaultValue="unknown" />
-            <PersistedClaim ClaimTypeReferenceId="displayName" DefaultValue="unknown" />
+            <PersistedClaim ClaimTypeReferenceId="displayName" DefaultValue="unknown" /-->
   
             <!-- Optional claims -->
-            <PersistedClaim ClaimTypeReferenceId="otherMails" />
+            <!--PersistedClaim ClaimTypeReferenceId="otherMails" />
             <PersistedClaim ClaimTypeReferenceId="givenName" />
             <PersistedClaim ClaimTypeReferenceId="surname" />
           </PersistedClaims>
           <OutputClaims>
             <OutputClaim ClaimTypeReferenceId="objectId" />
-            <OutputClaim ClaimTypeReferenceId="newUser" PartnerClaimType="newClaimsPrincipalCreated" />
+            <OutputClaim ClaimTypeReferenceId="newUser" PartnerClaimType="newClaimsPrincipalCreated" /-->
             <!-- The following other mails claim is needed for the case when a user is created, we get otherMails from directory. Self-asserted provider also has an
                  OutputClaims, and if this is absent, Self-Asserted provider will prompt the user for otherMails. -->
-            <OutputClaim ClaimTypeReferenceId="otherMails" />
+            <!--OutputClaim ClaimTypeReferenceId="otherMails" />
           </OutputClaims>
           <IncludeTechnicalProfile ReferenceId="AAD-Common" />
           <UseTechnicalProfileForSessionManagement ReferenceId="SM-AAD" />
@@ -606,13 +606,13 @@
           <InputClaims>
             <InputClaim ClaimTypeReferenceId="AlternativeSecurityId" PartnerClaimType="alternativeSecurityId" Required="true" />
           </InputClaims>
-          <OutputClaims>
+          <OutputClaims-->
             <!-- Required claims -->
   
-            <OutputClaim ClaimTypeReferenceId="objectId" />
+            <!--OutputClaim ClaimTypeReferenceId="objectId" /-->
 
             <!-- Optional claims -->
-            <OutputClaim ClaimTypeReferenceId="userPrincipalName" />
+            <!--OutputClaim ClaimTypeReferenceId="userPrincipalName" />
             <OutputClaim ClaimTypeReferenceId="displayName" />
             <OutputClaim ClaimTypeReferenceId="otherMails" />
             <OutputClaim ClaimTypeReferenceId="givenName" />
@@ -626,7 +626,7 @@
             <Item Key="RaiseErrorIfClaimsPrincipalDoesNotExist">false</Item>
           </Metadata>
           <IncludeTechnicalProfile ReferenceId="AAD-UserReadUsingAlternativeSecurityId" />
-        </TechnicalProfile>
+        </TechnicalProfile-->
  
         <!-- Technical profiles for local accounts -->
 

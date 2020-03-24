@@ -47,19 +47,19 @@
     </ClaimsProvider>
 
 
-    <!--ClaimsProvider>
+    <ClaimsProvider>
       <DisplayName>Local Account</DisplayName>
-      <TechnicalProfiles-->
+      <TechnicalProfiles>
         <!--Sample: Create new technical profile based on the password reset technical profile that
             asks the user to provide and verify the email address, and returns the user object id.
             If the account doesn't exist, the technical profile return following error message "An account could not be found for the provided user ID."
             The new technical profile sets the display name to "Sign-In with Email" that is shown on the sign-up or sign-in page-->
-        <!--TechnicalProfile Id="LocalAccountDiscoveryUsingEmailAddress-SignIn">
+        <TechnicalProfile Id="LocalAccountDiscoveryUsingEmailAddress-SignIn">
           <DisplayName>Sign-In with Email</DisplayName>
           <IncludeTechnicalProfile ReferenceId="LocalAccountDiscoveryUsingEmailAddress" />
         </TechnicalProfile>
       </TechnicalProfiles>
-    </ClaimsProvider-->
+    </ClaimsProvider>
   </ClaimsProviders>
 
     <UserJourneys>
@@ -72,7 +72,7 @@
             <!--ClaimsProviderSelection TargetClaimsExchangeId="FacebookExchange" /-->
             
             <!--Sample: Adding the sign-in with email button-->
-            <!--ClaimsProviderSelection TargetClaimsExchangeId="SignIn-WithEmail" /-->
+            <ClaimsProviderSelection TargetClaimsExchangeId="SignIn-WithEmail" />
             <ClaimsProviderSelection ValidationClaimsExchangeId="LocalAccountSigninEmailExchange" />
           </ClaimsProviderSelections>
           <ClaimsExchanges>
@@ -81,7 +81,7 @@
         </OrchestrationStep>
 
         <!-- Check if the user has selected to sign in using one of the social providers -->
-        <!--OrchestrationStep Order="2" Type="ClaimsExchange">
+        <OrchestrationStep Order="2" Type="ClaimsExchange">
           <Preconditions>
             <Precondition Type="ClaimsExist" ExecuteActionsIf="true">
               <Value>objectId</Value>
@@ -89,13 +89,13 @@
             </Precondition>
           </Preconditions>
           <ClaimsExchanges>
-            <ClaimsExchange Id="FacebookExchange" TechnicalProfileReferenceId="Facebook-OAUTH" /-->
+            <!--ClaimsExchange Id="FacebookExchange" TechnicalProfileReferenceId="Facebook-OAUTH" /-->
             
             <!--Sample: the sign-in with email claims exchange--> 
-            <!--ClaimsExchange Id="SignIn-WithEmail" TechnicalProfileReferenceId="LocalAccountDiscoveryUsingEmailAddress-SignIn" />
+            <ClaimsExchange Id="SignIn-WithEmail" TechnicalProfileReferenceId="LocalAccountDiscoveryUsingEmailAddress-SignIn" />
             <ClaimsExchange Id="SignUpWithLogonEmailExchange" TechnicalProfileReferenceId="LocalAccountSignUpWithLogonEmail" />
           </ClaimsExchanges>
-        </OrchestrationStep-->
+        </OrchestrationStep>
 
         <!-- For social IDP authentication, attempt to find the user account in the directory. -->
         <!--OrchestrationStep Order="3" Type="ClaimsExchange">
@@ -114,7 +114,7 @@
         <!-- Show self-asserted page only if the directory does not have the user account already (i.e. we do not have an objectId). 
           This can only happen when authentication happened using a social IDP. If local account was created or authentication done
           using ESTS in step 2, then an user account must exist in the directory by this time. -->
-        <OrchestrationStep Order="2" Type="ClaimsExchange">
+        <!--OrchestrationStep Order="3" Type="ClaimsExchange">
           <Preconditions>
             <Precondition Type="ClaimsExist" ExecuteActionsIf="true">
               <Value>objectId</Value>
@@ -124,7 +124,7 @@
           <ClaimsExchanges>
             <ClaimsExchange Id="LocalAccountSigninEmailExchange" TechnicalProfileReferenceId="SelfAsserted-LocalAccountSignin-Email" />
           </ClaimsExchanges>
-        </OrchestrationStep>
+        </OrchestrationStep-->
 
         <!-- This step reads any user attributes that we may not have received when authenticating using ESTS so they can be sent 
           in the token. -->

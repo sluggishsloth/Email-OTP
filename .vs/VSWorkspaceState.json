@@ -3,8 +3,10 @@
     "",
     "\\policies",
     "\\policies\\passwordless-email",
-    "\\policies\\passwordless-email\\policy"
+    "\\policies\\passwordless-email\\policy",
+    "\\policies\\signin-email-verification",
+    "\\policies\\signin-email-verification\\policy"
   ],
-  "SelectedNode": "\\policies\\passwordless-email\\policy\\PasswordReset.xml",
+  "SelectedNode": "\\policies\\signin-email-verification\\README.md",
   "PreviewInSolutionExplorer": false
 }

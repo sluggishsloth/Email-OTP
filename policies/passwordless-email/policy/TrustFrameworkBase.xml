@@ -26,7 +26,7 @@
 
       <!-- SECTION I: Claims required for user journeys to work properly -->
 
-      <ClaimType Id="socialIdpUserId">
+      <!--ClaimType Id="socialIdpUserId">
         <DisplayName>Username</DisplayName>
         <DataType>string</DataType>
         <UserHelpText/>
@@ -34,7 +34,7 @@
         <Restriction>
           <Pattern RegularExpression="^[a-zA-Z0-9]+[a-zA-Z0-9_-]*$" HelpText="The username you provided is not valid. It must begin with an alphabet or number and can contain alphabets, numbers and the following symbols: _ -" />
         </Restriction>
-      </ClaimType>
+      </ClaimType-->
 
       <ClaimType Id="tenantId">
         <DisplayName>User's Object's Tenant ID</DisplayName>
@@ -153,11 +153,11 @@
         <UserHelpText/>
       </ClaimType>
 <!--the below 2 might need to be commented-->
-      <ClaimType Id="alternativeSecurityId">
+      <!--ClaimType Id="alternativeSecurityId">
         <DisplayName>AlternativeSecurityId</DisplayName>
         <DataType>string</DataType>
         <UserHelpText/>
-      </ClaimType>
+      </ClaimType-->
 
       <ClaimType Id="mailNickName">
         <DisplayName>MailNickName</DisplayName>
@@ -343,7 +343,7 @@
         </OutputClaims>
       </ClaimsTransformation>
 
-      <ClaimsTransformation Id="CreateAlternativeSecurityId" TransformationMethod="CreateAlternativeSecurityId">
+      <!--ClaimsTransformation Id="CreateAlternativeSecurityId" TransformationMethod="CreateAlternativeSecurityId">
         <InputClaims>
           <InputClaim ClaimTypeReferenceId="socialIdpUserId" TransformationClaimType="key" />
           <InputClaim ClaimTypeReferenceId="identityProvider" TransformationClaimType="identityProvider" />
@@ -360,7 +360,7 @@
         <OutputClaims>
           <OutputClaim ClaimTypeReferenceId="sub" TransformationClaimType="createdClaim" />
         </OutputClaims>
-     </ClaimsTransformation>
+     </ClaimsTransformation-->
  
    </ClaimsTransformations>
 
@@ -803,7 +803,7 @@
           <IncludeInSso>false</IncludeInSso>
           <InputClaims>
 
-            <InputClaim ClaimTypeReferenceId="alternativeSecurityId" />
+            <!--InputClaim ClaimTypeReferenceId="alternativeSecurityId" /-->
 
             <InputClaim ClaimTypeReferenceId="userPrincipalName" />
 
@@ -966,7 +966,7 @@
         </TechnicalProfile>
 
         <!-- Profile name is being used to disambiguate AAD session between sign up and sign in -->
-        <TechnicalProfile Id="SM-SocialSignup">
+        <!--TechnicalProfile Id="SM-SocialSignup">
           <IncludeTechnicalProfile ReferenceId="SM-AAD" />
         </TechnicalProfile>
 
@@ -979,7 +979,7 @@
           <PersistedClaims>
             <PersistedClaim ClaimTypeReferenceId="AlternativeSecurityId" />
           </PersistedClaims>
-        </TechnicalProfile>
+        </TechnicalProfile-->
  
       </TechnicalProfiles>
     </ClaimsProvider>
